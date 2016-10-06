@@ -1,3 +1,4 @@
+package game;
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
@@ -39,11 +40,12 @@ public class Game {
 			}
 		}
 		
-		int winnings = matches * bet;
+		int winnings = matches * (bet * 2);
 
 		if (matches > 0) {			
 			player.receiveWinnings(winnings);
 		}
+		
         return winnings;		
 	}
 	
