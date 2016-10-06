@@ -4,7 +4,7 @@ public class Dice {
 	private DiceValue value;
 	
 	public Dice() {
-		value =  DiceValue.getRandom();
+        value =  DiceValue.getRandom();
 	}
 	
 	public DiceValue getValue() {
@@ -12,6 +12,7 @@ public class Dice {
 	}
 
 	public DiceValue roll() {
+	    value =  DiceValue.getRandom();
 		return DiceValue.getRandom();
 	}		
 	
