@@ -15,34 +15,34 @@ public class Bug1 {
     private Game   _game   = null;
     private Player _player = null;
     
-    private int _ballance  = 50;
+    private int _balance  = 50;
     private int _bet       = 5;
     
-    private Dice dice1_, dice2_, dice3_;
+    private Dice _dice1, _dice2, _dice3;
 
     @Before
     public void setUp() throws Exception {
-        _player = new Player ("Loic", _ballance);
+        _player = new Player ("Loic", _balance);
         
-        dice1_ = mock(Dice.class);
-        dice2_ = mock(Dice.class);
-        dice3_ = mock(Dice.class);
+        _dice1 = mock(Dice.class);
+        _dice2 = mock(Dice.class);
+        _dice3 = mock(Dice.class);
     }
 
     @Test
     public void testBug1() {
         //arrange
-        when(dice1_.getValue()).thenReturn(DiceValue.ANCHOR);
-        when(dice2_.getValue()).thenReturn(DiceValue.CROWN);
-        when(dice3_.getValue()).thenReturn(DiceValue.CROWN);
+        when(_dice1.getValue()).thenReturn(DiceValue.ANCHOR);
+        when(_dice2.getValue()).thenReturn(DiceValue.CROWN);
+        when(_dice3.getValue()).thenReturn(DiceValue.CROWN);
         
-        _game = new Game(dice1_, dice2_, dice3_);
+        _game = new Game(_dice1, _dice2, _dice3);
         
         //execute
         _game.playRound(_player, DiceValue.ANCHOR, _bet);
-        _ballance += _bet;
+        _balance += _bet;
         
         //assert
-        assertEquals(_ballance, _player.getBalance());
+        assertEquals(_balance, _player.getBalance());
     }
 }

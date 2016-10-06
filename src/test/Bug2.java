@@ -10,12 +10,12 @@ import game.Player;
 
 public class Bug2 {
     private Player _player;
-    private int _ballance  = 5;
+    private int _balance  = 5;
     private int _bet       = 5;
 
     @Before
     public void setUp() throws Exception {
-        _player = new Player ("Loic", _ballance);
+        _player = new Player ("Loic", _balance);
     }
 
     @After
